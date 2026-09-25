@@ -1,0 +1,31 @@
+apiVersion: cicd.nguiland.io/v1alpha1
+kind: DependencyGraph
+metadata:
+  name: nguiland
+  namespace: ${ENVIRONMENT}
+spec:
+  project: nguiland
+  repositories:
+    - name: nguiland-dependencies
+    - name: nguiland-ops-docker
+    - name: nguiland-dto
+      dependencies:
+        - nguiland-dependencies
+    - name: nguiland-ops-helm
+    - name: nguiland-io-utils
+      dependencies:
+        - nguiland-dependencies
+    - name: nguiland-ms-parent
+      dependencies:
+        - nguiland-dependencies
+    - name: nguiland-orm
+      dependencies:
+        - nguiland-dependencies
+    - name: nguiland-rest
+      dependencies:
+        - nguiland-dependencies
+        - nguiland-orm
+        - nguiland-dto
+    - name: nguiland-web-oauth2
+      dependencies:
+        - nguiland-dependencies

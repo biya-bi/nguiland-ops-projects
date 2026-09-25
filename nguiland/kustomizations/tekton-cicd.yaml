@@ -1,0 +1,23 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: tekton-cicd
+  namespace: ${ENVIRONMENT}
+spec:
+  dependsOn:
+    - name: tekton-install
+  interval: 10m0s
+  path: ./cicd
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: nguiland-ops-tekton
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: tekton-pipelines-webhook
+      namespace: tekton-pipelines
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings

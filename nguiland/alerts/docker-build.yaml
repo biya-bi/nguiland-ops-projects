@@ -1,0 +1,20 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: docker-build
+  namespace: ${ENVIRONMENT}
+spec:
+  providerRef:
+    name: git-event-listener
+  inclusionList:
+    - "^stored artifact for commit '.*'$"
+    - "^no changes since last reconcilation'.*'$"
+  eventSeverity: info
+  eventMetadata:
+    contextDir: .
+    project: nguiland
+    pipeline: docker-build
+    eventListenerAddress: http://el-docker-build.${ENVIRONMENT}.svc.cluster.local:8080/
+  eventSources:
+    - kind: GitRepository
+      name: nguiland-ops-docker

@@ -1,0 +1,22 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: helm-chart-oci-publish
+  namespace: ${ENVIRONMENT}
+spec:
+  providerRef:
+    name: git-event-listener
+  inclusionList:
+    - "^stored artifact for commit '.*'$"
+    - "^no changes since last reconcilation'.*'$"
+  eventSeverity: info
+  eventMetadata:
+    chartsDir: addons
+    excludedCharts: cronjob-common
+    registry: oci://${ARTIFACTORY_JCR_HOST}:${ARTIFACTORY_JCR_PORT}/docker-local
+    project: nguiland
+    pipeline: helm-chart-oci-publish
+    eventListenerAddress: http://el-helm-chart-oci-publish.${ENVIRONMENT}.svc.cluster.local:8080/
+  eventSources:
+    - kind: GitRepository
+      name: helm

@@ -1,0 +1,32 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: maven-lib
+  namespace: ${ENVIRONMENT}
+spec:
+  providerRef:
+    name: git-event-listener
+  inclusionList:
+    - "^stored artifact for commit '.*'$"
+    - "^no changes since last reconcilation'.*'$"
+  eventSeverity: info
+  eventMetadata:
+    contextDir: .
+    project: nguiland
+    pipeline: maven-lib
+    eventListenerAddress: http://el-maven-lib.${ENVIRONMENT}.svc.cluster.local:8080/
+  eventSources:
+    - kind: GitRepository
+      name: nguiland-io-utils
+    - kind: GitRepository
+      name: nguiland-dependencies
+    - kind: GitRepository
+      name: nguiland-web-oauth2
+    - kind: GitRepository
+      name: nguiland-ms-parent
+    - kind: GitRepository
+      name: nguiland-rest
+    - kind: GitRepository
+      name: nguiland-orm
+    - kind: GitRepository
+      name: nguiland-dto
