@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - dependencies.yaml
+  - dto.yaml
+  - io-utils.yaml
+  - ms-parent.yaml
+  - orm.yaml
+  - rest.yaml
+  - web-oauth2.yaml
