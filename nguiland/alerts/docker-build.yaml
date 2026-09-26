@@ -12,7 +12,7 @@ spec:
   eventSeverity: info
   eventMetadata:
     contextDir: .
-    project: nguiland
+    project: ngld-infra
     pipeline: docker-build
     eventListenerAddress: http://el-docker-build.${ENVIRONMENT}.svc.cluster.local:8080/
   eventSources:

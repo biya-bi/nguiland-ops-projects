@@ -1,17 +1,15 @@
 apiVersion: cicd.nguiland.io/v1alpha1
 kind: DependencyGraph
 metadata:
-  name: nguiland
+  name: ngld-maven-lib
   namespace: ${ENVIRONMENT}
 spec:
-  project: nguiland
+  project: ngld-maven-lib
   repositories:
     - name: nguiland-dependencies
-    - name: nguiland-ops-docker
     - name: nguiland-dto
       dependencies:
         - nguiland-dependencies
-    - name: nguiland-ops-helm
     - name: nguiland-io-utils
       dependencies:
         - nguiland-dependencies
