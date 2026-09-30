@@ -9,21 +9,21 @@ spec:
     - name: nguiland-dependencies
     - name: nguiland-dto
       dependencies:
-        - nguiland-dependencies
+        - name: nguiland-dependencies
     - name: nguiland-io-utils
       dependencies:
-        - nguiland-dependencies
+        - name: nguiland-dependencies
     - name: nguiland-ms-parent
       dependencies:
-        - nguiland-dependencies
+        - name: nguiland-dependencies
     - name: nguiland-orm
       dependencies:
-        - nguiland-dependencies
+        - name: nguiland-dependencies
     - name: nguiland-rest
       dependencies:
-        - nguiland-dependencies
-        - nguiland-orm
-        - nguiland-dto
+        - name: nguiland-dependencies
+        - name: nguiland-orm
+        - name: nguiland-dto
     - name: nguiland-web-oauth2
       dependencies:
-        - nguiland-dependencies
+        - name: nguiland-dependencies
