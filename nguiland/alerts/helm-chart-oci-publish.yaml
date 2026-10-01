@@ -19,4 +19,4 @@ spec:
     eventListenerAddress: http://el-helm-chart-oci-publish.${ENVIRONMENT}.svc.cluster.local:8080/
   eventSources:
     - kind: GitRepository
-      name: helm
+      name: nguiland-ops-helm
