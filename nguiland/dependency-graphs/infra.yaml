@@ -1,7 +1,7 @@
 apiVersion: cicd.nguiland.io/v1alpha1
 kind: DependencyGraph
 metadata:
-  name: ngld-infra
+  name: infra
   namespace: ${ENVIRONMENT}
 spec:
   repositories:
