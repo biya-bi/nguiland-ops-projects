@@ -4,4 +4,3 @@ resources:
   - alerts
   - dependency-graphs
   - git-repositories
-  - kustomizations
