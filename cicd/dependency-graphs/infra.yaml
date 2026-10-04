@@ -2,7 +2,7 @@ apiVersion: cicd.nguiland.io/v1alpha1
 kind: DependencyGraph
 metadata:
   name: infra
-  namespace: ${ENVIRONMENT}
+  namespace: cicd
 spec:
   repositories:
     - name: nguiland-ops-docker
