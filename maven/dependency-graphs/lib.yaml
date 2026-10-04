@@ -1,8 +1,8 @@
 apiVersion: cicd.nguiland.io/v1alpha1
 kind: DependencyGraph
 metadata:
-  name: maven-lib
-  namespace: ${ENVIRONMENT}
+  name: lib
+  namespace: maven
 spec:
   repositories:
     - name: nguiland-dependencies
