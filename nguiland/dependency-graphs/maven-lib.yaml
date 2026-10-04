@@ -4,7 +4,6 @@ metadata:
   name: ngld-maven-lib
   namespace: ${ENVIRONMENT}
 spec:
-  project: ngld-maven-lib
   repositories:
     - name: nguiland-dependencies
     - name: nguiland-dto

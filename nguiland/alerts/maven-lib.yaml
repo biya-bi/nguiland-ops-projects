@@ -12,7 +12,6 @@ spec:
   eventSeverity: info
   eventMetadata:
     contextDir: .
-    project: ngld-maven-lib
     pipeline: maven-lib
     eventListenerAddress: http://el-maven-lib.${ENVIRONMENT}.svc.cluster.local:8080/
   eventSources:
