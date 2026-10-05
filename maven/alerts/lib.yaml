@@ -13,7 +13,7 @@ spec:
   eventMetadata:
     contextDir: .
     pipeline: maven-lib
-    eventListenerAddress: http://el-maven-lib.${ENVIRONMENT}.svc.cluster.local:8080/
+    eventListenerAddress: http://el-maven-lib.cicd.svc.cluster.local:8080/
   eventSources:
     - kind: GitRepository
       name: nguiland-io-utils

@@ -13,7 +13,7 @@ spec:
   eventMetadata:
     contextDir: .
     pipeline: docker-build
-    eventListenerAddress: http://el-docker-build.${ENVIRONMENT}.svc.cluster.local:8080/
+    eventListenerAddress: http://el-docker-build.cicd.svc.cluster.local:8080/
   eventSources:
     - kind: GitRepository
       name: nguiland-ops-docker

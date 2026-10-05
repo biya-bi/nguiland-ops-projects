@@ -15,7 +15,7 @@ spec:
     excludedCharts: cronjob-common
     registry: oci://${ARTIFACTORY_JCR_HOST}:${ARTIFACTORY_JCR_PORT}/docker-local
     pipeline: helm-chart-oci-publish
-    eventListenerAddress: http://el-helm-chart-oci-publish.${ENVIRONMENT}.svc.cluster.local:8080/
+    eventListenerAddress: http://el-helm-chart-oci-publish.cicd.svc.cluster.local:8080/
   eventSources:
     - kind: GitRepository
       name: nguiland-ops-helm
