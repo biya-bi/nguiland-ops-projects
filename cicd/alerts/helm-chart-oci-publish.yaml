@@ -13,7 +13,7 @@ spec:
   eventMetadata:
     chartsDir: addons
     excludedCharts: cronjob-common
-    registry: oci://${ARTIFACTORY_JCR_HOST}:${ARTIFACTORY_JCR_PORT}/docker-local
+    registry: oci://${ARTIFACTORY_JCR_IMAGE_HOST}/docker-local
     pipeline: helm-chart-oci-publish
     eventListenerAddress: http://el-helm-chart-oci-publish.cicd.svc.cluster.local:8080/
   eventSources:
