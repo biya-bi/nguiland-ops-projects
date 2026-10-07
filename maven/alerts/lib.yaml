@@ -12,7 +12,7 @@ spec:
   eventSeverity: info
   eventMetadata:
     contextDir: .
-    pipeline: maven-lib
+    pipelineName: maven-lib
     pipelineNamespace: cicd
     eventListenerAddress: http://el-maven-lib.cicd.svc.cluster.local:8080/
   eventSources:
