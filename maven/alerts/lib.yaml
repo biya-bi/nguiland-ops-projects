@@ -8,7 +8,6 @@ spec:
     name: git-event-listener
   inclusionList:
     - "^stored artifact for commit '.*'$"
-    - "^no changes since last reconcilation'.*'$"
   eventSeverity: info
   eventMetadata:
     contextDir: .
