@@ -1,0 +1,17 @@
+apiVersion: cicd.nguiland.io/v1alpha1
+kind: DependencyGraph
+metadata:
+  name: microservices
+  namespace: maven
+spec:
+  repositories:
+    - name: config-service
+      dependencies:
+        - name: nguiland-ms-parent
+        - name: nguiland-io-utils
+    - name: eureka-service
+      dependencies:
+        - name: nguiland-ms-parent
+    - name: gateway-service
+      dependencies:
+        - name: nguiland-ms-parent
