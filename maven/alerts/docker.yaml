@@ -1,0 +1,22 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: docker
+  namespace: maven
+spec:
+  providerRef:
+    name: git-event-listener
+  inclusionList:
+    - "^stored artifact for commit '.*'$"
+  eventSeverity: info
+  eventMetadata:
+    pipelineName: maven-docker
+    pipelineNamespace: cicd
+    eventListenerAddress: http://el-maven-docker.cicd.svc.cluster.local:8080
+  eventSources:
+    - kind: GitRepository
+      name: config-service
+    - kind: GitRepository
+      name: eureka-service
+    - kind: GitRepository
+      name: gateway-service
