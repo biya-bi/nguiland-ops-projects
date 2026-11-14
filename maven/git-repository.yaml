@@ -1,12 +1,12 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: orm
-  namespace: ostock
+  name: maven
+  namespace: ${ENVIRONMENT}
 spec:
   interval: 1m0s
   ref:
     branch: develop
   secretRef:
     name: ssh-credentials
-  url: ssh://github.com/biya-bi/ostock-orm.git
+  url: ssh://github.com/biya-bi/nguiland-ops-maven.git

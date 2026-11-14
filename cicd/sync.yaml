@@ -1,0 +1,18 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cicd
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 10m
+  timeout: 10m
+  path: .
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: cicd
+    namespace: ${ENVIRONMENT}
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings
