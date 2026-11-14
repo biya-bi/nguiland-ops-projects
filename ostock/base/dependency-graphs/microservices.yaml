@@ -5,20 +5,6 @@ metadata:
   namespace: ostock
 spec:
   repositories:
-    - name: config-service
-      dependencies:
-        - name: nguiland-ms-parent
-          namespace: maven
-        - name: nguiland-io-utils
-          namespace: maven
-    - name: eureka-service
-      dependencies:
-        - name: nguiland-ms-parent
-          namespace: maven
-    - name: gateway-service
-      dependencies:
-        - name: nguiland-ms-parent
-          namespace: maven
     - name: license-service
       dependencies:
         - name: ms-parent
