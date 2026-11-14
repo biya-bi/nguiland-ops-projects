@@ -5,4 +5,5 @@ resources:
   - config-maps
   - dependency-graphs
   - git-repositories
+  - helm-releases
   - kustomizations
