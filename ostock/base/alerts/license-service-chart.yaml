@@ -1,7 +1,7 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: license-service
+  name: license-service-chart
   namespace: ostock
   labels:
     category: microservice
@@ -12,16 +12,11 @@ spec:
     - "^stored artifact for commit '.*'$"
   eventSeverity: info
   eventMetadata:
-    pipelineName: maven-helm
+    pipelineName: helm-publish
     pipelineNamespace: cicd
-    eventListenerAddress: http://el-maven-helm.cicd.svc.cluster.local:8080
-    mavenContextDir: .
-    helmChartRepoUrl: git@github.com:biya-bi/ostock-helm.git
-    helmChartRepoRevision: develop
-    helmChartReleaseNamespace: ostock
-    chartsDir: .
+    eventListenerAddress: http://el-helm-publish.cicd.svc.cluster.local:8080
     chartContext: license-service
-    environment: ${ENVIRONMENT}
+    repoPath: charts/ostock
   eventSources:
     - kind: GitRepository
-      name: license-service
+      name: license-service-chart
